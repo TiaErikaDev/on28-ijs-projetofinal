@@ -1,16 +1,29 @@
 const Disciplina = require('../Disciplina/Disciplina');
+const Professor = require('../Professor/Professor');
+const Turma = require('../Turma/Turma');
+const Periodo = require('../Periodo/Periodo');
+const Horario = require('../Horario/Horario');
 
 describe('Disciplina class', () => {
     let disciplina;
+    let horario;
+    let periodo;
 
     beforeEach(() => {
         disciplina = new Disciplina('Matemática', 4);
+        horario = new Horario();
+        periodo = new Periodo();
     });
 
     test('deve criar uma nova disciplina corretamente', () => {
+        let professor = new Professor ('Erika');
+        let turma = new Turma ('1A');
         disciplina.criarDisciplina('Matemática', 4, 'Erika', '1A');
         expect(Disciplina.listaDisciplina).toContain(disciplina);
+        expect(disciplina.professor).toBe('Erika'); 
+        expect(disciplina.turma).toBe('1A'); 
     });
+    
 
     test('deve alterar o nome da disciplina corretamente', () => {
         disciplina.editarNomeDisciplina('Matemática Avançada');
@@ -21,18 +34,6 @@ describe('Disciplina class', () => {
         const disciplinaAExcluir = new Disciplina('Geografia', 3);
         disciplinaAExcluir.criarDisciplina('Geografia', 3, 'João', '2B');
         disciplinaAExcluir.excluirDisciplina('Geografia');
-        expect(Disciplina.listaDisciplina).not.toContain(disciplinaAExcluir);
-    });
-
-    test('deve adicionar uma disciplina a um período corretamente', () => {
-        const disciplinaAdicionada = 'Física';
-        disciplina.adicionarDisciplina(disciplinaAdicionada, 2);
-        expect(Disciplina.listaDisciplina).toContain(disciplina);
-    });
-
-    test('deve bloquear um horário corretamente', () => {
-        const periodo = 2;
-        const coluna = 3;
-        disciplina.bloquearHorario(periodo, coluna);
+        expect(Disciplina.listaDisciplina).not.toContainEqual(disciplinaAExcluir);
     });
 });

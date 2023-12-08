@@ -19,8 +19,6 @@ describe('Periodo', () => {
     });
 
     test('deve não fazer nada se o período não existe', () => {
-        expect(() => {
-            periodo.excluirPeriodo(1);
-        }).toThrow('Período inválido.');
+        expect(() => periodo.excluirPeriodo(1)).toThrow('Período inválido.');
     });  
 });
