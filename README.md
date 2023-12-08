@@ -22,7 +22,7 @@ Para instalar o projeto, siga estas etapas:
 1. Clone o repositório.
 2. Execute `npm install` para instalar as dependências.
 3. Configure as variáveis de ambiente necessárias.
-4. execute `node script.js`
+4. execute `node scripts.js`
 5. execute `npm test`
 
 ## Implementações futuras
