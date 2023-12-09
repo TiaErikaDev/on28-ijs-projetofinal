@@ -14,6 +14,8 @@ O processo manual de criação de horários escolares é demorado e propenso a e
 ## Solução
 
 O sistema permite a criação dinâmica de horários escolares, facilitando a alocação de disciplinas em períodos específicos, atribuindo professores disponíveis e alocando turmas de acordo com suas necessidades.
+## Diagrama UML
+<img width="650" alt="Captura de Tela 2023-12-08 às 22 11 54" src="https://github.com/TiaErikaDev/on28-ijs-projetofinal/assets/103070308/45cee86d-bb89-4681-ad51-849a23256277">
 
 ## Instalação
 
